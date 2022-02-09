@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./icons/logo36x36.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#FFA500" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Pizza Taste</title>
+    <style>
+      #LoaderContainer {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #LoaderPage {
+        width: 100px;
+        height: 100px;
+        animation: rotate 1.5s linear infinite;
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div id="LoaderContainer">
+        <div id="LoaderPage">
+          <img src="./icons/logo96x96.png">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
