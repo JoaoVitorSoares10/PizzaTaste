@@ -1,0 +1,23 @@
+.orderContainer {
+    width: 80%;
+    margin: auto;
+}
+
+.InputArea {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inputItem {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right:20px;
+    min-width: 300px;
+}
+
+.addIcon {
+    cursor: pointer;
+    margin-left: 10px;
+}

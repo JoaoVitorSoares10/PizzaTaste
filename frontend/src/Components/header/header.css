@@ -3,11 +3,10 @@ header {
     display: flex;
     height: 60px;
     width: 100%;
-  }
+}
   
 header h1 {
     font-size: 25px;
-    color: black;
 }
   
 header img {

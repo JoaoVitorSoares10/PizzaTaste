@@ -14,6 +14,9 @@ export default function OrderRegister(){
   const [showSideBar, setShowSideBar] = useState(false);
   const [clientAlert, setClientAlert] = useState(false);
   const [form, setForm] = useState(false);
+  const [flavor, setFlavor] = useState('');
+  const [drink, setDrink] = useState('');
+  const [idClient, setIdClient] = useState(0);
 
   const handleChange = (event) =>  {  
     const idInput = event.target.id  
@@ -27,6 +30,10 @@ export default function OrderRegister(){
       setClientName(value); 
     }else if(idInput === 'address'){
       setAddress(value); 
+    }else if(idInput === 'flavor'){
+      setFlavor(value); 
+    }else if(idInput === 'drink'){
+      setDrink(value); 
     }
   }
 
@@ -39,10 +46,10 @@ export default function OrderRegister(){
       address: address,
       status: false
     }
-    console.log(data)
     if(clientName !== ''){      
       try{
-        await Api.post('client/register', data)
+        const req = await Api.post('client/register', data);
+        setIdClient(req.data._id);
         setForm(true);
       }catch (err){
         console.log(err)
@@ -50,10 +57,6 @@ export default function OrderRegister(){
     }else{
         setClientAlert(true)
     }
-  }
-
-  const handleForm = () =>{
-
   }
 
   return (
@@ -72,7 +75,12 @@ export default function OrderRegister(){
         : <></> }
         <div className='data'>
           {form ? 
-            <FormOrder />
+            <FormOrder 
+              handleChange={handleChange}
+              flavor={flavor}
+              drink={drink}
+              idClient={idClient}
+            />
           :
             <RegisterClient 
               clientAlert={clientAlert}
@@ -82,7 +90,6 @@ export default function OrderRegister(){
               address= {address}
               handleChange={handleChange}
               handleSubmit={handleSubmit}
-              handleForm={handleForm}
             />
           }
         </div>    

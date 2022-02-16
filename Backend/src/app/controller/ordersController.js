@@ -28,8 +28,8 @@ class OrdersController {
     async orderUpdate (req, res) {
         try{
             const data = await Orders.findByIdAndUpdate(req.params.id, { 
-                idPizza: req.body.idPizza,
-                idDrink: req.body.idDrink,
+                pizza: req.body.pizza,
+                drink: req.body.drink,
                 idClient: req.body.idClient
             })
             return res.json(data).status(202);

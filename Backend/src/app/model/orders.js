@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema(
     {
-      idPizza: {
+      pizza: {
         type: String,
         required: true
       },
-      idDrink: {
+      drink: {
         type: String,
         required: false
       },

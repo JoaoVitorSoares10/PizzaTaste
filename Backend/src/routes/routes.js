@@ -14,14 +14,6 @@ Router.put('/order/:id/update', OrderController.orderUpdate);
 Router.put('/status/:id', OrderController.orderStatus);
 Router.delete('/order/:id/delete', OrderController.orderDelete);
 
-Router.get('/pizza', PizzaController.list);
-Router.post('/pizza/register', PizzaController.register);
-Router.get('/pizza/:id', PizzaController.pizzaDetails);
-
-Router.get('/drink', DrinkController.list);
-Router.post('/drink/register', DrinkController.register);
-Router.get('/drink/:id', DrinkController.drinkDetails);
-
 Router.get('/client', ClientController.getAllClients);
 Router.get('/client/:id', ClientController.getClientById);
 Router.post('/client/register', ClientController.register);
